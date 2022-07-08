@@ -1,3 +1,4 @@
+import Chart from 'chart.js';
 <template>
   <div
     class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-700"
@@ -23,7 +24,7 @@
   </div>
 </template>
 <script>
-import Chart from "chart.js";
+import Chart from 'chart.js';
 
 export default {
   mounted: function () {

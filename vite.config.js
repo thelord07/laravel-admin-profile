@@ -7,6 +7,17 @@ export default defineConfig({
         laravel({
             input: 'resources/js/app.js',
         }),
+        {
+            name: 'blade',
+            handleHotUpdate({ file, server }) {
+                if (file.endsWith('.blade.php')) {
+                    server.ws.send({
+                        type: 'full-reload',
+                        path: '*',
+                    });
+                }
+            },
+        },
         vue({
             template: {
                 transformAssetUrls: {

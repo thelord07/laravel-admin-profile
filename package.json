@@ -5,6 +5,7 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@iconify/vue": "^3.2.1",
         "@inertiajs/inertia": "^0.11.0",
         "@inertiajs/inertia-vue3": "^0.6.0",
         "@inertiajs/progress": "^0.2.7",
@@ -21,6 +22,8 @@
         "vue": "^3.2.31"
     },
     "dependencies": {
-        "@popperjs/core": "^2.11.5"
+        "@popperjs/core": "^2.11.5",
+        "chart.js": "2.9.4",
+        "pinia": "^2.0.14"
     }
 }

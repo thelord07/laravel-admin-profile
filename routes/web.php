@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SkillsController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -7,6 +8,8 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return redirect('dashboard');
 });
+
+
 
 /* Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -25,4 +28,5 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+    Route::resource('/skills', SkillsController::class);
 });

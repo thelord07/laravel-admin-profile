@@ -14,12 +14,12 @@
         <i class="fas fa-bars"></i>
       </button>
       <!-- Brand -->
-      <router-link
+    <!--   <router-link
         class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
         to="/"
       >
         Vue Notus
-      </router-link>
+      </router-link> -->
       <!-- User -->
       <ul class="md:hidden items-center flex flex-wrap list-none">
         <li class="inline-block relative">
@@ -38,7 +38,7 @@
         <div
           class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200"
         >
-          <div class="flex flex-wrap">
+          <!-- <div class="flex flex-wrap">
             <div class="w-6/12">
               <router-link
                 class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
@@ -56,7 +56,7 @@
                 <i class="fas fa-times"></i>
               </button>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- Form -->
         <form class="mt-6 mb-4 md:hidden">
@@ -80,7 +80,7 @@
         <!-- Navigation -->
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none">
-          <li class="items-center">
+         <!--  <li class="items-center">
             <router-link
               to="/admin/dashboard"
               v-slot="{ href, navigate, isActive }"
@@ -171,7 +171,7 @@
                 Maps
               </a>
             </router-link>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Divider -->
@@ -185,7 +185,7 @@
         <!-- Navigation -->
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-          <li class="items-center">
+          <!-- <li class="items-center">
             <router-link
               class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               to="/auth/login"
@@ -205,7 +205,7 @@
               ></i>
               Register
             </router-link>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Divider -->
@@ -219,7 +219,7 @@
         <!-- Navigation -->
 
         <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
-          <li class="items-center">
+         <!--  <li class="items-center">
             <router-link
               class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
               to="/landing"
@@ -237,7 +237,7 @@
               <i class="fas fa-user-circle text-blueGray-300 mr-2 text-sm"></i>
               Profile Page
             </router-link>
-          </li>
+          </li> -->
         </ul>
 
         <!-- Divider -->
