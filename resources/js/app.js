@@ -1,7 +1,6 @@
 import './bootstrap';
 import '../css/app.css';
 
-
 import { createApp, h } from 'vue';
 import { createPinia } from 'pinia'
 import { createInertiaApp } from '@inertiajs/inertia-vue3';

@@ -21,7 +21,7 @@ const props = defineProps({
 <template>
     <form
         v-if="inputsForm"
-        class="flex flex-col items-center px-16"
+        class="flex flex-col items-center px-6 w-full"
         @submit.prevent="onSubmit"
     >
         <template v-for="(item, index) in inputsForm" :key="index">
@@ -36,7 +36,7 @@ const props = defineProps({
                     item?.type === 'password' ||
                     item?.type === 'number'
                 "
-                class="form-control mb-5"
+                class="w-full mt-5"
                 :type="item?.type"
                 :name="item?.name"
                 :placeholder="item?.placeholder"

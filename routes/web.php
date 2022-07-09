@@ -1,24 +1,14 @@
 <?php
 
-use App\Http\Controllers\SkillsController;
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\SkillsController;
+use App\Http\Controllers\ProjectController;
 
 Route::get('/', function () {
     return redirect('dashboard');
 });
-
-
-
-/* Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-}); */
 
 Route::middleware([
     'auth:sanctum',
@@ -28,5 +18,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
-    Route::resource('/skills', SkillsController::class);
+    Route::resource('skills', SkillsController::class)
+    ->except(['create', 'show', 'edit']);
+    Route::resource('projects', ProjectController::class)
+    ->except(['create', 'show', 'edit']);
 });

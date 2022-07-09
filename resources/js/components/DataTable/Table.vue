@@ -109,9 +109,9 @@ export default {
         class="relative flex flex-col min-w-0 break-words w-full mb-6 rounded"
         :class="[color === 'light' ? 'bg-white' : 'bg-emerald-900 text-white']"
     >
-        <div class="rounded-t mb-0 px-4 py-3 border-0">
+        <div class="rounded-t mb-0  py-3 border-0">
             <div class="flex flex-wrap items-center">
-                <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+                <div class="relative w-full  max-w-full flex-grow flex-1">
                     <div class="flex justify-end items-center flex-row">
                         <InputSearch v-model:text="this.textSearch" />
                     </div>
@@ -142,7 +142,7 @@ export default {
                             </button>
                         </th>
                         <th
-                            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-right"
                             :class="[
                                 color === 'light'
                                     ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
@@ -206,18 +206,19 @@ export default {
                         <td
                             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right"
                         >
-                            <div class="flex justify-end">
+                            <div class="flex justify-end ">
                                 <button
-                                    class="btn btn-primary mr-2"
+                                    class="bg-blue-500 p-3 rounded-lg mr-1"
                                     @click="$emit('edit', [row, 'edit'])"
                                 >
-                                    <Icon icon="bxs:edit" />
+                                    <Icon icon="bxs:edit" color="#FFFFFF" height="20px" />
                                 </button>
                                 <button
-                                    class="btn btn-danger"
+                                    class="bg-red-700 p-3 rounded-lg"
                                     @click="$emit('delete', [row, 'delete'])"
                                 >
-                                    <Icon icon="bxs:trash" />
+                                    <Icon icon="bxs:trash" color="#FFFFFF" height="20px" />
+
                                 </button>
                             </div>
                         </td>

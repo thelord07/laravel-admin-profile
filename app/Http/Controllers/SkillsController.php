@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use Inertia\Inertia;
 
 class SkillsController extends Controller
@@ -20,69 +21,48 @@ class SkillsController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => [
+                'required',
+                'max:255',
+                Rule::unique(Skill::class)
+            ],
+            'color' => [
+                'required',
+                'in:' . implode(',', Skill::getAvailableBackgroundColors())
+            ],
+        ]);
+
+        Skill::create($request->all());
+
+        return redirect()->route('skills.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function update(Request $request, Skill $skill)
     {
-        //
+        $request->validate([
+            'name' => [
+                'required',
+                'max:255',
+                Rule::unique(Skill::class)->ignore($skill->id)
+            ],
+            'color' => [
+                'required',
+                'in:' . implode(',', Skill::getAvailableBackgroundColors())
+            ],
+        ]);
+
+        $skill->update($request->all());
+
+        return redirect()->route('skills.index');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function destroy(Skill $skill)
     {
-        //
-    }
+        $skill->delete();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect()->route('skills.index');
     }
 }

@@ -4,20 +4,10 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     plugins: [
-        laravel({
-            input: 'resources/js/app.js',
-        }),
-        {
-            name: 'blade',
-            handleHotUpdate({ file, server }) {
-                if (file.endsWith('.blade.php')) {
-                    server.ws.send({
-                        type: 'full-reload',
-                        path: '*',
-                    });
-                }
-            },
-        },
+        laravel([
+            'resources/css/app.css',
+            'resources/js/app.js',
+        ]),
         vue({
             template: {
                 transformAssetUrls: {
@@ -27,4 +17,10 @@ export default defineConfig({
             },
         }),
     ],
+    server: {
+        host: '127.0.0.1',
+        watch: {
+            usePolling: true,
+        },
+    },
 });
